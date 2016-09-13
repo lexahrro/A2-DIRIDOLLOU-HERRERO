@@ -17,7 +17,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 		// TODO
 
 		// Force user connection to access dashboard
-		userConnection($db, 'git@initiation.com', 'password');
+		userConnection($db, $username, $password);
 		
 		header('Location: dashboard.php');
 
