@@ -20,21 +20,19 @@ if(	isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     elseif((isUsernameAvailable($db, $username)==true) && (isEmailAvailable($db, $email)==false)){
         $_SESSION["message"] = 'Erreur: email indisponible';
         header('Location: register.php');
-
+        //Code qui previent que l'email est déja utilisé//
     }
 
     elseif((isUsernameAvailable($db, $username)==false) && (isEmailAvailable($db, $email)==true)){
         $_SESSION["message"] = 'Erreur: username indisponible';
         header('Location: register.php');
-
+        //Code qui previent que l'username' est déja utilisé//
     }
     elseif((isUsernameAvailable($db, $username)==false) && (isEmailAvailable($db, $email)==false)){
         $_SESSION["message"] = 'Erreur: username et email indisponible';
         header('Location: register.php');
-
+        //Code qui previent que l'email et l'username sont déja utilisés//
     }
-
-
 
 
     else{
@@ -47,8 +45,7 @@ if(	isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 }
 
 
-
-else{
+	else{
 	$_SESSION['message'] = 'Erreur : Formulaire incomplet';
 	header('Location: register.php');
 
